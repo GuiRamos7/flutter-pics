@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+
 
 class App extends StatefulWidget {
   createState() {
@@ -9,28 +11,25 @@ class App extends StatefulWidget {
 class AppState extends State<App> {
   int counter = 0;
 
+  void fetchedImage() { }
+
   Widget build(context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: Text('Lets see images!'),
-          backgroundColor: Colors.indigo[400],
+          backgroundColor: Colors.black87,
         ),
         body: Text('$counter'),
         floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.indigo[400],
+          backgroundColor: Colors.black87,
           child: Icon(
-            Icons.favorite,
-            color: Colors.indigo[50],
+            Icons.add,
+            color: Colors.white,
           ),
-          onPressed: () {
-            setState(() {
-              counter++;
-            });
-          },
+          onPressed: fetchedImage,
         ),
       ),
     );
   }
 }
- 
